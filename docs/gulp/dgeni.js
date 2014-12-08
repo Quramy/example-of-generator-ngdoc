@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 
 var $ = require('gulp-load-plugins')({
@@ -15,10 +17,16 @@ var path = require('canonical-path');
 //    stylesheets: ['../../deps/bootstrap/bootstrap.css']
 // }
 //
+// This object contains paths of bower dependencies configured by not '(root)/docs/bower.json' but '(root)/bower.json'.
+//
+//
 var bowerFiles = require('../lib/bowerCommonFiles')({
   base: '../../deps',
   exclude: [/bootstrap.js/],
-  bowerJson: require('../bower.json')
+  paths: {
+    bowerDirectory: '../bower_components',
+    bowerJson: '../bower.json'
+  }
 });
 
 // Create deployment definition of dgeni example package.
@@ -90,7 +98,7 @@ gulp.task('docs:copy_dependencies', function () {
 	var scripts = bowerFiles.scripts || [];
   var stylesheets = bowerFiles.stylesheets || [];
 	var deps = _.union(scripts, stylesheets).filter(function (it) {
-		return it.match(depPath)
+		return it.match(depPath);
 	}).map(function (it) {
 		return it.replace(depPath, 'bower_components');
 	});

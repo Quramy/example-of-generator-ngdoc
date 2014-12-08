@@ -27,7 +27,7 @@ after_script:
 - git add -A
 - git commit -m "UPDATE DOCS."
 - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$GH_TOKEN" ] && git push --quiet https://$GH_TOKEN@github.com/Quramy/example-of-generator-ngdoc.git
-  gh-pages'
+  gh-pages > /dev/null'
 notifications:
   emails:
   - yosuke.kurami@gmail.com
