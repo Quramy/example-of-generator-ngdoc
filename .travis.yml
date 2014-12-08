@@ -4,7 +4,7 @@ env:
   - GIT_COMMITTER_EMAIL=yosuke.kurami@gmail.com
   - GIT_AUTHOR_NAME=Quramy
   - GIT_AUTHOR_EMAIL=yosuke.kurami@gmail.com
-  - secure: QH0uh/l+ZZS32L+lUBsuGJXAuVj3a1c3W53qAy+5c2vjlw34VgnbbPxpzixCceFGa6DllRW7URdsnwsED1z0Ln1DEQe+XK1z8FRIqQjCsEgeYK/4omxFUH0w7sT48D6x3PivsHS6gssdCG9hCR1BwOWRqjJaI2LodibBK4c+8J0=
+  - secure: MeJhx5HscQf8Ra9LMCafHqBNmO3AegY5ZLRAhhin9V6s1Q+clSNylB8E0TRqw5zkRvAOwynRxHtOLZOU6MJNwWNO3LIvYYS1o08K7YPWUQL7WCrl/DsXPCJ2xrEdV69YkG0aVmBrpvcnMBsXe78ggUAsB6ZaSL8eEos5ckYtzmU=
 language: node_js
 node_js:
 - '0.10'
