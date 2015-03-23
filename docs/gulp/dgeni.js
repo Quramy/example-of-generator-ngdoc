@@ -63,7 +63,7 @@ var dgeniGenerate = function () {
         renderDocsProcessor.extraData.deploymentTarget = 'default';
         renderDocsProcessor.extraData.git = {
           info: {
-            owner: 'Quramy',
+            owner: 'quramy',
             repo: 'example-of-generator-ngdoc'
           },
           version: {
@@ -88,6 +88,8 @@ var dgeniGenerate = function () {
 // Run dgeni to generate documents.
 gulp.task('dgeni', function (done){
   dgeniGenerate().then(function () {
+    done();
+  }).fail(function () {
     done();
   });
 });
