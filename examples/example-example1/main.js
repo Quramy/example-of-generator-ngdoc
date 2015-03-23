@@ -1,10 +1,6 @@
 (function(angular) {
   'use strict';
-angular.module('sampleServiceExample', ['exampleOfGeneratorNgdoc'])
-  .config(function (sampleServiceProvider) {
-    sampleServiceProvider.setMessage('Hello, AngularJS service!');
-  })
-  .controller('MainCtrl', function (sampleService) {
-    this.message = sampleService.getMessage();
-  });
+angular.module('sampleFilterExample', ['exampleOfGeneratorNgdoc']).controller('MainCtrl', function () {
+  this.input = 'sample input';
+});
 })(window.angular);

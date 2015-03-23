@@ -38,7 +38,39 @@ angular.module('exampleOfGeneratorNgdoc', []);
 angular.module('exampleOfGeneratorNgdoc').directive('sampleElem', function () {
   return {
     restrict: 'E',
-    template: '<div class="sample-awesome">Hello, AngularJS directive!</div>'
+    templateUrl: '/components/sample/sampleElem.html'
+  };
+});
+
+'use strict';
+
+/**
+ *
+ * @ngdoc filter
+ * @module exampleOfGeneratorNgdoc
+ * @name sampleFilter
+ * @description
+ * This is a sample filter.
+ *
+ * @example
+    <example module="sampleFilterExample" deps="" animate="false">
+      <file name="index.html">
+        <div ng-controller="MainCtrl as main">
+          <input ng-model="main.input" />
+          {{main.input | sampleFilter}}
+        </div>
+      </file>
+      <file name="main.js">
+        angular.module('sampleFilterExample', ['exampleOfGeneratorNgdoc']).controller('MainCtrl', function () {
+          this.input = 'sample input';
+        });
+      </file>
+    </example>
+ *
+ **/
+angular.module('exampleOfGeneratorNgdoc').filter('sampleFilter', function () {
+  return function (input) {
+    return input.toUpperCase();
   };
 });
 
@@ -117,3 +149,18 @@ angular.module('exampleOfGeneratorNgdoc').provider('sampleService', function () 
     }
   };
 });
+
+(function(module) {
+try {
+  module = angular.module('exampleOfGeneratorNgdoc');
+} catch (e) {
+  module = angular.module('exampleOfGeneratorNgdoc', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('/components/sample/sampleElem.html',
+    '<div class="sample-awesome">\n' +
+    '  Hello, AngularJS directive!\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
